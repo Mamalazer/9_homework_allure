@@ -1,6 +1,5 @@
 package allure.test;
 
-import allure.data.Constants;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -12,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import static allure.data.Constants.url;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
-public class GeneralFrontTest {
+public class BaseTest {
     @BeforeAll
     public static void setUp() {
         Configuration.pageLoadTimeout = 10000;

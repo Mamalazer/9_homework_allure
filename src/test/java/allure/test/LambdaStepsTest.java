@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static allure.data.Constants.issueName;
 import static allure.data.Constants.repository;
-import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -15,7 +15,7 @@ import static org.openqa.selenium.By.linkText;
 
 @Feature("Allure")
 @Story("Тесты с применением lambda steps")
-public class LambdaStepsTest extends GeneralFrontTest {
+public class LambdaStepsTest extends BaseTest {
 
     @Owner("d.kuznetsov")
     @Severity(SeverityLevel.BLOCKER)
@@ -28,7 +28,7 @@ public class LambdaStepsTest extends GeneralFrontTest {
         });
         step("Найти репозиторий с помощью поиска " + repository, () -> {
             $(".header-search-input").click();
-            $(".header-search-input").sendKeys(repository);
+            $(".header-search-input").setValue(repository);
             $(".header-search-input").submit();
         });
         step("Нажать на ссылку репозитория " + repository, () -> {
@@ -38,7 +38,7 @@ public class LambdaStepsTest extends GeneralFrontTest {
             $("#issues-tab").click();
         });
         step("Убедиться в наличии Issue " + issueName, () -> {
-            $(withText(issueName)).should(exist);
+            $(withText(issueName)).should(visible);
         });
     }
 }

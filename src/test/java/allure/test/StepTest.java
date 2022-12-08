@@ -10,7 +10,7 @@ import static allure.page.MainPage.openMainPage;
 
 @Feature("Allure")
 @Story("Тесты с применением web steps")
-public class StepTest extends GeneralFrontTest{
+public class StepTest extends BaseTest {
 
     @Owner("d.kuznetsov")
     @Severity(SeverityLevel.BLOCKER)

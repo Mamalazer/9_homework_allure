@@ -2,7 +2,6 @@ package allure.page;
 
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -18,7 +17,7 @@ public class IssuePage {
 
     @Step("Убедиться, что на странице присутствует issue c названием {name}")
     public IssuePage checkIssueByName(String name) {
-        $(withText(name)).should(exist);
+        $(withText(name)).should(visible);
         return this;
     }
 }

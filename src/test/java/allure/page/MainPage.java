@@ -19,7 +19,7 @@ public class MainPage {
     @Step("Найти репозиторий с именем {name}")
     public SearchResultPage searchRepository(String name) {
         $(searchField).click();
-        $(searchField).sendKeys(name);
+        $(searchField).setValue(name);
         $(searchField).submit();
         return new SearchResultPage();
     }
