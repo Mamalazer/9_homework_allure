@@ -23,4 +23,13 @@ public class StepTest extends BaseTest {
                 .openIssuesTab()
                 .checkIssueByName(issueName);
     }
+
+    @Owner("d.kuznetsov")
+    @DisplayName("Проверка перехода к странице 'Enterprise'")
+    @Test
+    public void test02() {
+        openMainPage()
+                .hoverButtonInHeader("Solutions")
+                .openHeaderLinkByName("Enterprise", "Build like the best");
+    }
 }
